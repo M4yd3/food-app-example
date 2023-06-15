@@ -4,10 +4,16 @@ import 'package:injectable/injectable.dart';
 import 'router.gr.dart';
 
 @singleton
-@AutoRouterConfig()
+@AutoRouterConfig(replaceInRouteName: 'Page|Screen|Tab,Route')
 class AppRouter extends $AppRouter {
   AppRouter();
 
   @override
-  final List<AutoRoute> routes = [];
+  final List<AutoRoute> routes = [
+    AutoRoute(
+      page: MainRoute.page,
+      path: '/',
+      children: const [],
+    ),
+  ];
 }
