@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../config/injection.dart';
+import '../../config/router.gr.dart';
+import '../home_tab/cubit/home_page_cubit.dart';
 import '../shared/custico_icons.dart';
 import '../shared/extensions.dart';
 
@@ -12,7 +16,9 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AutoTabsRouter(
-        routes: const [],
+        routes: const [
+          HomeRoute(),
+        ],
         builder: (context, child) => CupertinoTabScaffold(
           tabBar: CupertinoTabBar(
             items: [
@@ -36,7 +42,14 @@ class MainPage extends StatelessWidget {
             height: 60,
             backgroundColor: CupertinoColors.white,
           ),
-          tabBuilder: (context, index) => child,
+          tabBuilder: (context, index) => MultiBlocProvider(
+            providers: [
+              BlocProvider<HomePageCubit>(
+                create: (_) => getIt<HomePageCubit>(),
+              ),
+            ],
+            child: child,
+          ),
         ),
       ),
     );
