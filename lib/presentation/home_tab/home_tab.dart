@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../config/router.gr.dart';
 import '../shared/widgets/info_app_bar.dart';
 import 'cubit/home_page_cubit.dart';
 import 'widgets/category_card.dart';
@@ -27,7 +28,9 @@ class HomeTab extends StatelessWidget {
                       itemCount: categories.length,
                       itemBuilder: (context, index) => CategoryCard(
                         category: categories[index],
-                        onPressed: () {},
+                        onPressed: () => context.pushRoute(
+                          DishesRoute(categoryName: categories[index].name),
+                        ),
                       ),
                     ),
                   _ => const Center(child: CupertinoActivityIndicator()),

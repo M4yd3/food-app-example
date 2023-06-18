@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../config/injection.dart';
 import '../../config/router.dart';
+import '../shared/styles.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -21,7 +22,7 @@ class MainApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: const CupertinoThemeData(
-        primaryColor: Color(0xFF3364E0),
+        primaryColor: Styles.colorPrimary,
       ),
     );
   }

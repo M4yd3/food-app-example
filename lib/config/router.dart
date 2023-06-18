@@ -19,6 +19,7 @@ class AppRouter extends $AppRouter {
       path: '/',
       children: [
         AutoRoute(page: HomeRoute.page, path: 'home'),
+        AutoRoute(page: DishesRoute.page, path: 'dishes'),
       ],
     ),
   ];

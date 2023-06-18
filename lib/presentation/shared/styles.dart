@@ -9,6 +9,13 @@ class Styles {
     fontSize: 14,
   );
 
+  static const textSubtitle = TextStyle(
+    fontFamily: 'SF-Pro-Display',
+    fontWeight: FontWeight.normal,
+    fontSize: 14,
+    color: Color(0xFF808080),
+  );
+
   static const textBold = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontWeight: FontWeight.bold,
@@ -32,4 +39,8 @@ class Styles {
     fontWeight: FontWeight.bold,
     fontSize: 20,
   );
+
+  static const colorPrimary = Color(0xFF3364E0);
+
+  static const colorBackground = Color(0xFFF8F7F5);
 }
