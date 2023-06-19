@@ -23,8 +23,9 @@ class HomeTab extends StatelessWidget {
                 if (state is Initial) {
                   context.read<HomePageCubit>().loadCategories();
                 }
+
                 return switch (state) {
-                  Loaded(:final categories) => ListView.builder(
+                  Loaded(:final categories) => ListView.separated(
                       itemCount: categories.length,
                       itemBuilder: (context, index) => CategoryCard(
                         category: categories[index],
@@ -32,6 +33,8 @@ class HomeTab extends StatelessWidget {
                           DishesRoute(categoryName: categories[index].name),
                         ),
                       ),
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(height: 8),
                     ),
                   _ => const Center(child: CupertinoActivityIndicator()),
                 };

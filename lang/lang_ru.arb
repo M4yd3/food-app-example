@@ -20,5 +20,14 @@
         "type": "int"
       }
     }
+  },
+  "cartBuy": "Оплатить {sum} ₽",
+  "@cartBuy": {
+    "placeholders": {
+      "sum": {
+        "type": "int",
+        "format": "decimalPattern"
+      }
+    }
   }
 }

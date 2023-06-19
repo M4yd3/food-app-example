@@ -7,6 +7,7 @@ import '../../cart_tab/cubit/cart_cubit.dart';
 import '../../shared/custico_icons.dart';
 import '../../shared/extensions.dart';
 import '../../shared/styles.dart';
+import '../../shared/widgets/dish_specs_widget.dart';
 import 'icon_button.dart';
 
 class DishDialog extends StatelessWidget {
@@ -68,18 +69,7 @@ class DishDialog extends StatelessWidget {
               const SizedBox(height: 8),
               Text(dish.name, style: Styles.textBold16),
               const SizedBox(height: 8),
-              RichText(
-                text: TextSpan(
-                  text: context.intl.price(dish.price.truncate()),
-                  style: Styles.textRegularBlack,
-                  children: [
-                    TextSpan(
-                      text: ' · ${context.intl.weight(dish.weight.truncate())}',
-                      style: Styles.textSubtitleWithAlpha(66),
-                    )
-                  ],
-                ),
-              ),
+              DishSpecsWidget(dish: dish),
               const SizedBox(height: 8),
               ConstrainedBox(
                 constraints: const BoxConstraints(maxHeight: 170),
