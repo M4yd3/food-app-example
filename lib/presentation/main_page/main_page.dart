@@ -25,7 +25,7 @@ class MainPage extends StatelessWidget {
           routes: const [
             HomeRoute(),
             HomeRoute(),
-            HomeRoute(),
+            CartRoute(),
             HomeRoute(),
           ],
           bottomNavigationBuilder: (context, child) => CupertinoTabBar(

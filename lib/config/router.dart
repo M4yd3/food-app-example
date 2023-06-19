@@ -25,6 +25,7 @@ class AppRouter extends $AppRouter {
             AutoRoute(page: DishesRoute.page, path: 'dishes'),
           ],
         ),
+        AutoRoute(page: CartRoute.page, path: 'cart'),
       ],
     ),
   ];

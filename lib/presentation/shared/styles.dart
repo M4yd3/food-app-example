@@ -36,6 +36,13 @@ class Styles {
     fontSize: 14,
   );
 
+  static const textCartBuy = TextStyle(
+    fontFamily: 'SF-Pro-Display',
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    color: CupertinoColors.white,
+  );
+
   static const textBold16 = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontWeight: FontWeight.bold,
@@ -57,4 +64,6 @@ class Styles {
   static const colorPrimary = Color(0xFF3364E0);
 
   static const colorBackground = Color(0xFFF8F7F5);
+
+  static const colorCartButtons = Color(0xFFEFEEEC);
 }
