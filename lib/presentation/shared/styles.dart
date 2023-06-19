@@ -9,11 +9,25 @@ class Styles {
     fontSize: 14,
   );
 
-  static const textSubtitle = TextStyle(
+  static const textRegularBlack = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontWeight: FontWeight.normal,
     fontSize: 14,
-    color: Color(0xFF808080),
+    color: CupertinoColors.black,
+  );
+
+  static TextStyle textSubtitleWithAlpha(int a) => TextStyle(
+        fontFamily: 'SF-Pro-Display',
+        fontWeight: FontWeight.normal,
+        fontSize: 14,
+        color: Color(int.parse('0x${a}000000')),
+      );
+
+  static const textSubtitle80 = TextStyle(
+    fontFamily: 'SF-Pro-Display',
+    fontWeight: FontWeight.normal,
+    fontSize: 14,
+    color: Color(0x80000000),
   );
 
   static const textBold = TextStyle(
@@ -23,9 +37,9 @@ class Styles {
   );
 
   static const textBold16 = TextStyle(
-      fontFamily: 'SF-Pro-Display',
-      fontWeight: FontWeight.bold,
-      fontSize: 16,
+    fontFamily: 'SF-Pro-Display',
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
   );
 
   static const textBold18 = TextStyle(

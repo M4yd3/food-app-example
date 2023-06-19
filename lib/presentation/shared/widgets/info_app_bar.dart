@@ -29,7 +29,7 @@ class InfoAppBar extends StatelessWidget {
                 DateFormat('d MMMM, y', context.intl.localeName)
                     .format(DateTime.now()),
                 style:
-                    Styles.textSubtitle,
+                    Styles.textSubtitleWithAlpha(80),
               ),
             ],
           ),

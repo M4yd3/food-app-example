@@ -40,7 +40,7 @@ class DishTile extends StatelessWidget {
           const SizedBox(height: 5),
           Text(
             dish.name,
-            style: Styles.textRegular.copyWith(color: CupertinoColors.black),
+            style: Styles.textRegularBlack,
           ),
         ],
       ),

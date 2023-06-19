@@ -3,5 +3,22 @@
   "search": "Поиск",
   "cart": "Корзина",
   "account": "Аккаунт",
-  "city": "Санкт-Петербург"
+  "city": "Санкт-Петербург",
+  "addToCart": "Добавить в корзину",
+  "price": "{price} ₽",
+  "@price": {
+    "placeholders": {
+      "price": {
+        "type": "int"
+      }
+    }
+  },
+  "weight": "{weight}г",
+  "@weight": {
+    "placeholders": {
+      "weight": {
+        "type": "int"
+      }
+    }
+  }
 }

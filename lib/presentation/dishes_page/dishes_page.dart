@@ -5,14 +5,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../shared/styles.dart';
 import '../shared/widgets/user_avatar.dart';
 import 'cubit/dishes_page_cubit.dart';
+import 'widgets/dish_dialog.dart';
 import 'widgets/dishes_grid.dart';
 import 'widgets/tags_choice.dart';
 
 @RoutePage()
 class DishesPage extends StatelessWidget {
-  const DishesPage([this.categoryName]);
+  const DishesPage(this.categoryName);
 
-  final String? categoryName;
+  final String categoryName;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class DishesPage extends StatelessWidget {
                   ),
                   const Spacer(),
                   Text(
-                    categoryName ?? '',
+                    categoryName,
                     style: Styles.textBold16,
                   ),
                   const Spacer(),
@@ -59,7 +60,10 @@ class DishesPage extends StatelessWidget {
                           ),
                           DishesGrid(
                             dishes: dishes,
-                            onPressed: (index) {},
+                            onPressed: (index) => showCupertinoDialog(
+                              context: context,
+                              builder: (_) => DishDialog(state.dishes[index]),
+                            ),
                           ),
                         ],
                       ),

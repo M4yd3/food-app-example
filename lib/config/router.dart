@@ -9,17 +9,22 @@ class AppRouter extends $AppRouter {
   AppRouter();
 
   @override
-  RouteType get defaultRouteType => const RouteType.adaptive();
+  RouteType get defaultRouteType => const RouteType.cupertino();
 
   @override
   final List<AutoRoute> routes = [
-    RedirectRoute(path: '/', redirectTo: '/home'),
     AutoRoute(
       page: MainRoute.page,
       path: '/',
       children: [
-        AutoRoute(page: HomeRoute.page, path: 'home'),
-        AutoRoute(page: DishesRoute.page, path: 'dishes'),
+        AutoRoute(
+          page: EmptyRoute.page,
+          path: 'home',
+          children: [
+            AutoRoute(page: HomeRoute.page, path: ''),
+            AutoRoute(page: DishesRoute.page, path: 'dishes'),
+          ],
+        ),
       ],
     ),
   ];

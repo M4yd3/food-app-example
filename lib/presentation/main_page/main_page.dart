@@ -16,13 +16,19 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: AutoTabsRouter(
-        routes: [
-          const HomeRoute(),
-          DishesRoute(categoryName: null),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => getIt<HomePageCubit>()),
+          BlocProvider(create: (_) => getIt<DishesPageCubit>()),
         ],
-        builder: (context, child) => CupertinoTabScaffold(
-          tabBar: CupertinoTabBar(
+        child: AutoTabsScaffold(
+          routes: const [
+            HomeRoute(),
+            HomeRoute(),
+            HomeRoute(),
+            HomeRoute(),
+          ],
+          bottomNavigationBuilder: (context, child) => CupertinoTabBar(
             items: [
               BottomNavigationBarItem(
                 icon: const Icon(Custico.home),
@@ -43,17 +49,8 @@ class MainPage extends StatelessWidget {
             ],
             height: 60,
             backgroundColor: CupertinoColors.white,
-          ),
-          tabBuilder: (context, index) => MultiBlocProvider(
-            providers: [
-              BlocProvider<HomePageCubit>(
-                create: (_) => getIt<HomePageCubit>(),
-              ),
-              BlocProvider(
-                create: (_) => getIt<DishesPageCubit>(),
-              ),
-            ],
-            child: child,
+            currentIndex: context.tabsRouter.activeIndex,
+            onTap: context.tabsRouter.setActiveIndex,
           ),
         ),
       ),
