@@ -1,3 +1,3 @@
-# Test task
+# Food ordering app
 
-Flutter app for interview testing
+Food ordering flutter app example
